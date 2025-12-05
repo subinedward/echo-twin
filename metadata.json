@@ -1,0 +1,7 @@
+{
+  "name": "ECHO Systems",
+  "description": "A high-end, Swiss Digital style landing page for an AI twin context manager. Features strict monochrome aesthetics, grid layouts, and complex typography-driven animations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
