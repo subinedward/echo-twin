@@ -15,7 +15,7 @@ To change the font throughout the application, simply edit the CSS variables in 
   /* Change these to any Google Font or system font */
   --font-serif: 'Lora', serif;        /* Currently Lora - for headings */
   --font-mono: 'JetBrains Mono', monospace;  /* For code/technical text */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 ```
 

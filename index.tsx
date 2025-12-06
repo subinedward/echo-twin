@@ -10,6 +10,7 @@ import React from 'react';
 // Import ReactDOM - the bridge between React and the actual HTML DOM (Document Object Model)
 // The 'client' version is for client-side rendering (runs in the browser)
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 // Import our main App component that contains all other components
 import App from './App';
@@ -41,6 +42,8 @@ root.render(
   // It renders components twice to catch side effects
   <React.StrictMode>
     {/* This is our entire application wrapped in one component */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

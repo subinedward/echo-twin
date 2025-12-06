@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ArrowLeft, Loader2 } from 'lucide-react';
 import { Logo } from './Logo';
@@ -13,7 +13,7 @@ const toTitleCase = (str: string) => {
 
 interface AuthScreenProps {
   onBack: () => void;
-  onComplete: () => void;
+  onComplete: (name: string) => void;
 }
 
 export const AuthScreen: React.FC<AuthScreenProps> = ({ onBack, onComplete }) => {
@@ -60,13 +60,17 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onBack, onComplete }) =>
     }, 1500);
   };
 
+  const handleWelcomeComplete = useCallback(() => {
+    onComplete(name);
+  }, [onComplete, name]);
+
   return (
     <div className="h-screen w-full bg-[#050505] text-[#E5E5E5] flex flex-col md:flex-row overflow-hidden relative">
       
       {/* Exit Animation Overlay */}
       <AnimatePresence>
         {status === 'granted' && (
-          <WelcomeScreen onComplete={onComplete} name={toTitleCase(name)} />
+          <WelcomeScreen onComplete={handleWelcomeComplete} name={toTitleCase(name)} />
         )}
       </AnimatePresence>
 
